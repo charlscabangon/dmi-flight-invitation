@@ -1,0 +1,36 @@
+{
+    "name": "dmi-world-tour",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "nuxt build",
+        "dev": "nuxt dev",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview",
+        "postinstall": "nuxt prepare",
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix",
+        "format": "prettier --write .",
+        "format:check": "prettier --check ."
+    },
+    "dependencies": {
+        "@supabase/supabase-js": "^2.45.4",
+        "gsap": "^3.12.5",
+        "html-to-image": "^1.11.11",
+        "nuxt": "^3.14.0",
+        "vue": "^3.5.0",
+        "vue-router": "^4.4.0",
+        "zod": "^3.23.8"
+    },
+    "devDependencies": {
+        "@nuxt/eslint": "^1.17.0",
+        "@nuxt/fonts": "^0.10.0",
+        "@tailwindcss/vite": "^4.3.3",
+        "@vueuse/nuxt": "^11.1.0",
+        "eslint": "^9.39.5",
+        "eslint-config-prettier": "^10.1.8",
+        "prettier": "^3.9.6",
+        "tailwindcss": "^4.3.3",
+        "typescript": "^5.9.3"
+    }
+}
