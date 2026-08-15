@@ -7,7 +7,11 @@ export default defineNuxtConfig({
 
     srcDir: 'app/',
 
-    modules: ['@nuxt/eslint', '@nuxt/fonts', '@vueuse/nuxt'],
+    modules: [
+        '@nuxt/eslint',
+        '@nuxt/fonts',
+        '@vueuse/nuxt',
+    ],
 
     vite: {
         plugins: [tailwindcss()],
@@ -19,18 +23,19 @@ export default defineNuxtConfig({
 
     fonts: {
         families: [
-            { name: 'Poppins', provider: 'google' },
+            { name: 'Ranchers', provider: 'google' },
+            { name: 'SUSE', provider: 'google' },
         ],
     },
 
     app: {
         head: {
-            title: "Dmi's World Tour — Boarding Pass Invitation",
+            title: "Dmi's World Tour",
             meta: [
                 { name: 'viewport', content: 'width=device-width, initial-scale=1' },
                 {
                     name: 'description',
-                    content: "You're invited to join Dmi's 1st Birthday World Tour. Board now.",
+                    content: "Your journey with Dmi awaits. Board now.",
                 },
             ],
         },

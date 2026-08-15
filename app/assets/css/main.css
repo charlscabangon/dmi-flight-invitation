@@ -1,0 +1,53 @@
+@import 'tailwindcss';
+
+@theme {
+    /* Colors */
+    --color-primary: oklch(0.7928 0.1141 221.14);
+    --color-primary-fg: oklch(0.3646 0.1017 260.89);
+    --color-primary-bg: oklch(0.8836 0.0586 222.73);
+
+    --color-accent: oklch(0.5634 0.2204 26.21);
+
+    /* Fonts */
+    --font-display: 'Ranchers', sans-serif;
+    --font-sans: 'SUSE', sans-serif;
+}
+
+@layer base {
+    html,
+    body,
+    #__nuxt {
+        height: 100%;
+    }
+
+    body {
+        @apply bg-dmi-navy text-dmi-cream antialiased font-sans;
+    }
+}
+
+@layer components {
+    /* Page transition — subtle cross-fade, respects reduced motion below */
+    .page-enter-active,
+    .page-leave-active {
+        transition:
+            opacity 0.35s ease,
+            transform 0.35s ease;
+    }
+    .page-enter-from,
+    .page-leave-to {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .page-enter-active,
+        .page-leave-active {
+            transition: none;
+        }
+        .page-enter-from,
+        .page-leave-to {
+            opacity: 1;
+            transform: none;
+        }
+    }
+}
