@@ -1,4 +1,6 @@
 @import 'tailwindcss';
+@import '../fonts/Ranchers/stylesheet.css';
+@import '../fonts/SUSE/stylesheet.css';
 
 @theme {
     /* Colors */
@@ -21,7 +23,15 @@
     }
 
     body {
-        @apply bg-dmi-navy text-dmi-cream antialiased font-sans;
+        @apply bg-primary-bg text-primary-fg antialiased font-sans;
+    }
+
+    h1 {
+        @apply font-display text-white text-4xl text-balance uppercase leading-snug tracking-widest;
+    }
+
+    p {
+        @apply font-sans text-primary-fg text-base text-pretty;
     }
 }
 
