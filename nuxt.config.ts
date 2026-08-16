@@ -7,11 +7,7 @@ export default defineNuxtConfig({
 
     srcDir: 'app/',
 
-    modules: [
-        '@nuxt/eslint',
-        '@nuxt/fonts',
-        '@vueuse/nuxt',
-    ],
+    modules: ['@nuxt/eslint', '@vueuse/nuxt'],
 
     vite: {
         plugins: [tailwindcss()],
@@ -21,13 +17,6 @@ export default defineNuxtConfig({
 
     components: [{ path: '~/components', pathPrefix: false }],
 
-    fonts: {
-        families: [
-            { name: 'Ranchers', provider: 'google' },
-            { name: 'SUSE', provider: 'google' },
-        ],
-    },
-
     app: {
         head: {
             title: "Dmi's World Tour",
@@ -35,7 +24,7 @@ export default defineNuxtConfig({
                 { name: 'viewport', content: 'width=device-width, initial-scale=1' },
                 {
                     name: 'description',
-                    content: "Your journey with Dmi awaits. Board now.",
+                    content: 'Your journey with Dmi awaits. Board now.',
                 },
             ],
         },
