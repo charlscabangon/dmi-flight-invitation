@@ -31,7 +31,7 @@
     }
 
     p {
-        @apply font-sans text-primary-fg text-base text-pretty;
+        @apply font-sans text-primary-fg text-base text-pretty tracking-widest;
     }
 }
 
