@@ -80,15 +80,9 @@ const cloudLayers = computed(() =>
             const seed = layerIndex * 97 + itemIndex * 13;
 
             return {
-                src: CLOUD_POOL[
-                    Math.floor(
-                        seededRandom(seed) * CLOUD_POOL.length,
-                    )
-                ],
+                src: CLOUD_POOL[Math.floor(seededRandom(seed) * CLOUD_POOL.length)],
                 leftWithinStrip: seededRandom(seed + 1) * 100,
-                top:
-                    rangeMin +
-                    seededRandom(seed + 2) * (rangeMax - rangeMin),
+                top: rangeMin + seededRandom(seed + 2) * (rangeMax - rangeMin),
                 sizeVariance: 0.85 + seededRandom(seed + 3) * 0.3,
             };
         });
@@ -97,8 +91,7 @@ const cloudLayers = computed(() =>
             baseItems.map((item, itemIndex) => ({
                 ...item,
                 key: `${stripIndex}-${itemIndex}`,
-                leftInTrack:
-                    stripIndex * 50 + item.leftWithinStrip * 0.5,
+                leftInTrack: stripIndex * 50 + item.leftWithinStrip * 0.5,
             })),
         );
 
@@ -116,32 +109,27 @@ const setTrackRef = (el: Element | null, index: number) => {
 onMounted(() => {
     // Scopes GSAP animations for automatic cleanup.
     ctx = gsap.context(() => {
-        const mm = gsap.matchMedia();
+        trackRefs.value.forEach((track, index) => {
+            if (!track) return;
 
-        // Skip animations when reduced motion is preferred.
-        mm.add('(prefers-reduced-motion: no-preference)', () => {
-            trackRefs.value.forEach((track, index) => {
-                if (!track) return;
-
-                gsap.to(track, {
-                    xPercent: -50,
-                    duration: props.layers[index]?.duration ?? 60,
-                    ease: 'none',
-                    repeat: -1,
-                });
+            gsap.to(track, {
+                xPercent: -50,
+                duration: props.layers[index]?.duration ?? 60,
+                ease: 'none',
+                repeat: -1,
             });
-
-            if (planeInner.value) {
-                gsap.to(planeInner.value, {
-                    y: props.floatAmplitude,
-                    rotation: 1.5,
-                    duration: props.floatDuration,
-                    ease: 'sine.inOut',
-                    yoyo: true,
-                    repeat: -1,
-                });
-            }
         });
+
+        if (planeInner.value) {
+            gsap.to(planeInner.value, {
+                y: props.floatAmplitude,
+                rotation: 1.5,
+                duration: props.floatDuration,
+                ease: 'sine.inOut',
+                yoyo: true,
+                repeat: -1,
+            });
+        }
     }, rootEl.value ?? undefined);
 });
 
