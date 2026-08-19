@@ -36,7 +36,7 @@ withDefaults(defineProps<Props>(), {
     .spinner-blades {
         transform-box: view-box;
         transform-origin: 19.95px 23.2px;
-        animation: spin 0.5s linear infinite;
+        animation: spin 0.35s linear infinite;
     }
 
     @keyframes spin {
