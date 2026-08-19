@@ -5,8 +5,11 @@ import airplaneIcon from '~/assets/icons/display/airplane.svg';
 import cloud01 from '~/assets/icons/display/cloud-01.svg';
 import cloud02 from '~/assets/icons/display/cloud-02.svg';
 import cloud03 from '~/assets/icons/display/cloud-03.svg';
+import cloud04 from '~/assets/icons/display/cloud-04.svg';
+import cloud05 from '~/assets/icons/display/cloud-05.svg';
+import cloud06 from '~/assets/icons/display/cloud-06.svg';
 
-const CLOUD_POOL = [cloud01, cloud02, cloud03];
+const CLOUD_POOL = [cloud01, cloud02, cloud03, cloud04, cloud05, cloud06];
 
 interface CloudLayerConfig {
     scale: number; // 1 = full size
@@ -27,33 +30,33 @@ const props = withDefaults(
         layers?: CloudLayerConfig[];
     }>(),
     {
-        planeSize: 'clamp(140px, 34vw, 220px)',
+        planeSize: 'clamp(200px, 38vw, 230px)',
         planeOffsetX: '0px',
         planeOffsetY: '-200px',
         floatAmplitude: 10,
         floatDuration: 3.2,
-        cloudBaseSize: '42vw',
+        cloudBaseSize: '40vw',
         layers: () => [
             {
-                scale: 0.5,
-                opacity: 0.25,
-                duration: 95,
-                count: 10,
-                verticalRange: [2, 70],
-            },
-            {
-                scale: 0.75,
+                scale: 1,
                 opacity: 0.5,
-                duration: 62,
-                count: 6,
-                verticalRange: [4, 85],
+                duration: 24,
+                count: 10,
+                verticalRange: [1, 35],
             },
             {
-                scale: 1.25,
-                opacity: 1,
-                duration: 20,
+                scale: 1.5,
+                opacity: 0.5,
+                duration: 16,
                 count: 4,
-                verticalRange: [50, 92],
+                verticalRange: [55, 85],
+            },
+            {
+                scale: 2,
+                opacity: 1,
+                duration: 8,
+                count: 4,
+                verticalRange: [55, 92],
             },
         ],
     },
