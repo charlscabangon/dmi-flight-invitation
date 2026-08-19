@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 interface Props {
     icon: string;
     title: string;
@@ -7,21 +6,20 @@ interface Props {
 }
 
 defineProps<Props>();
-
 </script>
 
 <template>
-    <article class="h-16 w-xs bg-primary flex items-center gap-2 p-1 rounded-xl">
-        <div class="h-full aspect-square bg-primary-bg p-3 rounded-lg">
-            <img :src="icon" :alt="title" class="size-8"/>
+    <article class="h-16 w-xs bg-primary flex items-center gap-2 p-2 rounded-xl ring ring-primary-hover shadow-sm">
+        <div class="h-12 flex items-center justify-center aspect-square bg-primary-bg p-2 rounded-lg">
+            <img :src="icon" :alt="title" class="size-6" />
         </div>
 
-        <div class="space-y-2 pr-3">
-            <p class="font-semibold text-base uppercase text-white">
+        <div class="space-y-1 pr-3">
+            <p class="font-semibold text-sm uppercase text-white">
                 {{ title }}
             </p>
 
-            <p class="text-white text-sm">
+            <p class="font-normal text-white text-xs">
                 {{ desc }}
             </p>
         </div>
