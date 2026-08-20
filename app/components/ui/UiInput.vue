@@ -2,14 +2,14 @@
 import { useSlots } from 'vue';
 
 interface Props {
-    modelValue: string
-    label?: string
-    placeholder?: string
-    id?: string
-    type?: string
-    autocomplete?: string
-    ariaLabel?: string
-    error?: string | null
+    modelValue: string;
+    label?: string;
+    placeholder?: string;
+    id?: string;
+    type?: string;
+    autocomplete?: string;
+    ariaLabel?: string;
+    error?: string | null;
 }
 
 defineProps<Props>();
@@ -45,12 +45,9 @@ const slots = useSlots();
                     slots.trailing ? 'pr-12' : 'pr-4',
                 ]"
                 @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"
-            >
+            />
 
-            <div
-                v-if="slots.trailing"
-                class="absolute right-2 top-1/2 -translate-y-1/2"
-            >
+            <div v-if="slots.trailing" class="absolute right-2 top-1/2 -translate-y-1/2">
                 <slot name="trailing" />
             </div>
         </div>
