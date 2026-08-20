@@ -9,7 +9,7 @@ defineProps<Props>();
 </script>
 
 <template>
-    <article class="h-16 w-xs bg-primary flex items-center gap-2 p-2 rounded-xl ring ring-primary-hover shadow-sm">
+    <article class="h-16 w-xs bg-primary-hover flex items-center gap-2 p-2 rounded-xl ring ring-primary-hover shadow-sm">
         <div class="h-12 flex items-center justify-center aspect-square bg-primary-bg p-2 rounded-lg">
             <img :src="icon" :alt="title" class="size-6" />
         </div>
