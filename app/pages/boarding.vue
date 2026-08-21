@@ -12,6 +12,7 @@ const {
     boardingPass,
     isDownloading,
     downloadError,
+    downloadHint,
     downloadBoardingPass 
 } = useBoardingPass();
 
@@ -46,6 +47,10 @@ onMounted(() => {
 
             <p v-if="downloadError" class="text-sm text-red-400" role="alert">
                 {{ downloadError }}
+            </p>
+
+            <p v-else-if="downloadHint" class="text-sm text-primary-fg" role="status">
+                {{ downloadHint }}
             </p>
 
             <ui-button
