@@ -10,7 +10,7 @@ interface TakeoffSequenceOptions {
  *
  */
 export function useTakeoffSequence(options: TakeoffSequenceOptions) {
-    const { onComplete, durationMs = 5000 } = options;
+    const { onComplete, durationMs = 8000 } = options;
 
     const isPlaying = ref(false);
     let timer: ReturnType<typeof setTimeout> | null = null;

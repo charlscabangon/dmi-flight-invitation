@@ -4,7 +4,7 @@ const router = useRouter();
 const { visible } = useAnimation();
 
 const { isPlaying, play } = useTakeoffSequence({
-    durationMs: 4000,
+    durationMs: 8000,
     onComplete: () => router.push('/flight-details'),
 });
 
