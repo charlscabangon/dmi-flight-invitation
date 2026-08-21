@@ -73,7 +73,7 @@ const bars = Array.from({ length: 40 }, () => barWidths[Math.floor(Math.random()
                             Date
                         </p>
                         <p class="text-desc">
-                            08 28 26
+                            August 29, 2026
                         </p>
                     </div>
 
@@ -125,7 +125,7 @@ const bars = Array.from({ length: 40 }, () => barWidths[Math.floor(Math.random()
                         Date
                     </p>
                     <p class="text-desc">
-                        08 28 26
+                        08 29 26
                     </p>
                 </div>
 

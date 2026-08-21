@@ -19,7 +19,7 @@ export default defineNuxtConfig({
 
     app: {
         head: {
-            title: "Dmi's World Tour",
+            title: "Flight DMI001",
             meta: [
                 { name: 'viewport', content: 'width=device-width, initial-scale=1' },
                 {

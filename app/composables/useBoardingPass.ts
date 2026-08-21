@@ -32,7 +32,7 @@ export function useBoardingPass() {
             });
 
             const link = document.createElement('a');
-            link.download = 'dmi-boarding-pass.png';
+            link.download = 'dmi001-boarding-pass.png';
             link.href = dataUrl;
             link.click();
         } catch (error) {

@@ -24,7 +24,7 @@ const details = [
     {
         title: 'Date',
         icon: calendar,
-        desc: 'August 28, 2026',
+        desc: 'August 29, 2026 • Saturday',
     },
     {
         title: 'Time',

@@ -30,6 +30,8 @@
 
     --color-white: oklch(0.9851 0 0);
 
+    --color-pattern: rgba(56, 79, 117, 0.1);
+
     /* Easing */
     --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -81,11 +83,7 @@
 
 @layer utilities {
     .pattern-dots {
-        background-image: radial-gradient(
-            circle,
-            oklch(from var(--color-primary-fg) l c h / 10%) 1px,
-            transparent 1px
-        );
+        background-image: radial-gradient(circle, var(--color-pattern) 1px, transparent 1px);
         background-size: 12px 12px;
     }
 
