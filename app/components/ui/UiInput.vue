@@ -20,7 +20,7 @@ const slots = useSlots();
 </script>
 
 <template>
-    <div class="flex flex-col gap-2">
+    <div class="w-full flex flex-col gap-2">
         <label
             v-if="label"
             :for="id"
@@ -39,7 +39,7 @@ const slots = useSlots();
                 :aria-label="!label ? ariaLabel : undefined"
                 :aria-invalid="!!error"
                 :class="[
-                    'w-full bg-primary-bg/20 text-primary-fg px-4 py-3 rounded-lg',
+                    'w-full bg-primary-bg-muted text-primary-fg px-4 py-3 rounded-lg',
                     'outline-none transition placeholder:text-primary-fg/40',
                     'focus:border-primary focus:ring-2 focus:ring-primary',
                     slots.trailing ? 'pr-12' : 'pr-4',
@@ -52,6 +52,6 @@ const slots = useSlots();
             </div>
         </div>
 
-        <p v-if="error" class="text-xs text-red-500" role="alert">{{ error }}</p>
+        <p v-if="error" class="text-xs text-red-400" role="alert">{{ error }}</p>
     </div>
 </template>

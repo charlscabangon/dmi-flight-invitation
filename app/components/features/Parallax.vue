@@ -21,6 +21,7 @@ interface CloudLayerConfig {
 
 const props = withDefaults(
     defineProps<{
+        plane?: boolean;
         planeSize?: string;
         planeOffsetX?: string;
         planeOffsetY?: string;
@@ -30,6 +31,7 @@ const props = withDefaults(
         layers?: CloudLayerConfig[];
     }>(),
     {
+        plane: true,
         planeSize: 'clamp(200px, 38vw, 230px)',
         planeOffsetX: '0px',
         planeOffsetY: '-200px',
@@ -179,6 +181,7 @@ onBeforeUnmount(() => {
             </div>
 
             <div
+                v-if="plane"
                 class="absolute left-1/2 top-1/2"
                 :style="{
                     transform: `translate(calc(-50% + ${planeOffsetX}), calc(-50% + ${planeOffsetY}))`,
