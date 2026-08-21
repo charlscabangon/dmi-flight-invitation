@@ -13,7 +13,7 @@
     --color-primary-active: oklch(0.6800 0.1450 221.14);
     --color-primary-muted: oklch(0.93 0.045 221.14);
 
-    --color-primary-fg: oklch(0.3646 0.1017 260.89);
+    --color-primary-fg: oklch(0.3846 0.1017 260.89);
     --color-primary-fg-hover: oklch(0.305 0.105 260.89);
     --color-primary-fg-active: oklch(0.25 0.1 260.89);
     --color-primary-fg-muted: oklch(0.52 0.065 260.89);
@@ -21,12 +21,14 @@
     --color-primary-bg: oklch(0.8836 0.0586 222.73);
     --color-primary-bg-hover: oklch(0.85 0.07 222.73);
     --color-primary-bg-active: oklch(0.815 0.08 222.73);
-    --color-primary-bg-muted: oklch(0.945 0.03 222.73);
+    --color-primary-bg-muted: oklch(0.945 0.015 222.73);
 
     --color-accent: oklch(0.5634 0.2204 26.21);
     --color-accent-hover: oklch(0.51 0.22 26.21);
     --color-accent-active: oklch(0.46 0.205 26.21);
     --color-accent-muted: oklch(0.93 0.045 26.21);
+
+    --color-white: oklch(0.9851 0 0);
 
     /* Easing */
     --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -38,11 +40,23 @@
     }
 
     h1 {
-        @apply font-display text-white text-4xl text-balance uppercase leading-snug tracking-widest drop-shadow-xl drop-shadow-primary/70;
+        @apply font-display text-white text-4xl text-balance uppercase leading-snug tracking-widest;
     }
 
     p {
         @apply font-sans font-semibold text-primary-fg text-base text-pretty tracking-wider;
+    }
+
+    .text-display {
+        @apply font-display text-4xl text-balance uppercase leading-snug tracking-widest drop-shadow-xl drop-shadow-primary/70;
+    }
+
+    .text-label {
+        @apply font-sans text-[0.60rem] text-primary-fg-muted uppercase tracking-widest;
+    }
+
+    .text-desc {
+        @apply font-sans text-xs text-primary-fg uppercase tracking-widest;
     }
 }
 
@@ -66,6 +80,15 @@
 }
 
 @layer utilities {
+    .pattern-dots {
+        background-image: radial-gradient(
+            circle,
+            oklch(from var(--color-primary-fg) l c h / 10%) 1px,
+            transparent 1px
+        );
+        background-size: 12px 12px;
+    }
+
     /* Animation */
     .slide-up {
         opacity: 0;
