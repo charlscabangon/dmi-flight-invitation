@@ -53,8 +53,8 @@ const details = [
         </template>
 
         <template #content>
-            <div class="flex flex-col gap-6 pt-6">
-                <div class="space-y-2">
+            <div class="flex flex-col gap-6 px-4 pt-6">
+                <div class="mx-auto space-y-2">
                     <ui-card
                         v-for="(detail, index) in details"
                         :key="index"

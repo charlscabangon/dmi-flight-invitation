@@ -66,7 +66,7 @@ onMounted(() => {
         </template>
 
         <template #content>
-            <div class="h-full w-full max-w-xs flex flex-col justify-between gap-8 py-6">
+            <div class="h-full w-full max-w-xs flex flex-col justify-between gap-8 py-6 mx-auto">
                 <form class="flex flex-col gap-6" @submit.prevent="handleSubmit">
                     <ui-input
                         id="passengerName"

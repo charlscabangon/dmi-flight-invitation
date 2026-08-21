@@ -38,7 +38,7 @@
 
 @layer base {
     body {
-        @apply bg-gradient-sky text-primary-fg antialiased font-sans select-none;
+        @apply min-h-screen bg-gradient-sky text-primary-fg antialiased font-sans select-none overflow-x-hidden;
     }
 
     h1 {
