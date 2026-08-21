@@ -17,7 +17,7 @@ onMounted(() => {
 <template>
     <div class="h-screen flex flex-col justify-center items-center gap-2 text-center">
         <h1
-            :class="['slide-up', visible && 'slide-up-in']"
+            :class="['text-display slide-up', visible && 'slide-up-in']"
         >
             Welcome Aboard!
         </h1>

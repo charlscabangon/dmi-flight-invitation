@@ -105,9 +105,10 @@ export function useBooking() {
 
     return {
         passengerName,
+        key: STORAGE_KEY,
+        maxCompanion: MAX_COMPANIONS,
         companions,
         companionCount,
-        maxCompanion: MAX_COMPANIONS,
         addCompanion,
         removeCompanion,
         confirmedBooking,

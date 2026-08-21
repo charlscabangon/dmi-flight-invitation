@@ -41,7 +41,7 @@ const handleSubmit = () => {
         console.error('Could not save RSVP to the guest list', error);
     });
 
-    router.push('/boarding-pass');
+    router.push('/boarding');
 }
 
 // One companion field visible from the start ("1/3").
@@ -55,7 +55,7 @@ onMounted(() => {
 <template>
     <info-layout>
         <template #header>
-            <h1>Passenger Information</h1>
+            <h1 class="text-display">Passenger Information</h1>
             <div>
                 <p>Dmi needs to know who's coming</p>
                 <p>along for the journey</p>
@@ -71,6 +71,7 @@ onMounted(() => {
                         label="Full Name"
                         placeholder="Your name"
                         autocomplete="name"
+                        :error="errorMessage"
                     />
 
                     <div class="w-full flex flex-col gap-3">
@@ -117,10 +118,6 @@ onMounted(() => {
                             +
                         </button>
                     </div>
-
-                    <p v-if="errorMessage" class="text-center text-sm text-red-500" role="alert">
-                        {{ errorMessage }}
-                    </p>
 
                     <ui-button type="submit" :loading="isSubmitting">
                         Get boarding pass

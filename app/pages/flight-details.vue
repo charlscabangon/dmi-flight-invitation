@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import location from '@/assets/icons/ui/ic-location.svg';
 import airplane from '@/assets/icons/ui/ic-airplane.svg';
+import calendar from '@/assets/icons/ui/ic-calendar.svg';
+import clock from '@/assets/icons/ui/ic-clock.svg';
+import location from '@/assets/icons/ui/ic-location.svg';
 
 definePageMeta({
     layout: false,
@@ -15,18 +17,18 @@ const proceedToCheckIn = () => {
 
 const details = [
     {
-        title: 'Flight ID',
+        title: 'Flight',
         icon: airplane,
         desc: 'DMI001',
     },
     {
         title: 'Date',
-        icon: location,
+        icon: calendar,
         desc: 'August 28, 2026',
     },
     {
         title: 'Time',
-        icon: location,
+        icon: clock,
         desc: '3:00PM',
     },
     {
@@ -40,11 +42,12 @@ const details = [
 <template>
     <info-layout :content-animated="false">
         <template #header>
-            <h1>Flight Details</h1>
+            <h1 class="text-display">Flight Details</h1>
+            <p>Here's everything you need to know before takeoff</p>
         </template>
 
         <template #content>
-            <div class="flex flex-col gap-6 bg-white pt-6">
+            <div class="flex flex-col gap-6 pt-6">
                 <div class="space-y-2">
                     <ui-card
                         v-for="(detail, index) in details"
