@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import map from '@/assets/icons/display/map.svg'
+
 const props = withDefaults(
     defineProps<{
         contentAnimated?: boolean;
@@ -14,17 +16,15 @@ const { visible } = useAnimation();
 <template>
     <main class="pattern-dots bg-white w-full min-h-screen overflow-hidden">
         <section
-            :class="[
-                'slide-up',
-                'h-70 flex flex-col justify-center items-center text-center',
+            :class="[,
+                'relative isolate h-70 flex flex-col justify-center items-center text-center',
                 'bg-gradient-sky rounded-b-full shadow-sm overflow-hidden',
-                visible && 'slide-up-in',
             ]"
         >
             <slot name="header" />
             
             <img
-                src="assets/icons/display/map.svg"
+                :src="map"
                 class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-160 opacity-10"
             />
         </section>

@@ -17,6 +17,15 @@ const boardNow = () => {
             Your Journey with Dmi Awaits
         </h1>
 
+
+        <div
+            :class="['slide-up', visible && 'slide-up-in']"
+            :style="{ '--slide-duration': '500ms' }"
+        >
+            <reel-number value="DMI001" />
+        </div>
+        
+
         <div
             :class="['w-full slide-up', visible && 'slide-up-in']"
             :style="{ '--slide-duration': '500ms' }"

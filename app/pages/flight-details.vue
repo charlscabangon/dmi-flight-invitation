@@ -42,8 +42,14 @@ const details = [
 <template>
     <info-layout :content-animated="false">
         <template #header>
-            <h1 class="text-display">Flight Details</h1>
-            <p>Here's everything you need to know before takeoff</p>
+            <div class="flex flex-col justify-center items-center gap-2">
+                <reel-number value="Flight" />
+                <reel-number value="Details" />
+                <div>
+                    <p>Here's everything</p>
+                    <p>you need to know before takeoff</p>
+                </div>
+            </div>
         </template>
 
         <template #content>

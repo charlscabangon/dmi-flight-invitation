@@ -55,10 +55,13 @@ onMounted(() => {
 <template>
     <info-layout>
         <template #header>
-            <h1 class="text-display">Passenger Information</h1>
-            <div>
-                <p>Dmi needs to know who's coming</p>
-                <p>along for the journey</p>
+            <div class="flex flex-col justify-center items-center gap-2">
+                <reel-number value="Passenger" />
+                <reel-number value="Info" />
+                <div>
+                    <p>Dmi needs to know who's coming</p>
+                    <p>along for the journey</p>
+                </div>
             </div>
         </template>
 

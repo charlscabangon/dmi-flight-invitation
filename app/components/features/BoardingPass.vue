@@ -21,19 +21,19 @@ const bars = Array.from({ length: 40 }, () => barWidths[Math.floor(Math.random()
         ref="rootEl"
         :class="[
             'relative w-full max-w-sm flex flex-col overflow-hidden',
-            'bg-white text-primary-fg rounded-2xl shadow-xl'
+            'bg-[#ffffff] text-primary-fg rounded-2xl shadow-xl'
         ]"
         style="aspect-ratio: 3 / 4"
     >
         <!-- Header -->
         <div class="shrink-0 bg-primary-fg border-b-4 border-primary w-full py-3">
-            <h1 class="text-xl text-white text-center tracking-widest">
+            <h1 class="font-sans font-black text-xl text-white text-center tracking-widest">
                 Flight DMI001
             </h1>
         </div>
 
         <!-- Content. -->
-        <div class="relative z-10 flex-1 min-h-0 flex flex-col gap-3 text-left px-6 pt-4">
+        <div class="relative z-10 flex-1 min-h-0 flex flex-col gap-1 sm:gap-3 text-left px-6 pt-4">
             <!-- Passenger Information -->
             <div class="shrink-0 flex justify-between gap-4 border-b-2 border-primary-fg-muted/20 pb-3">
                 <div class="min-w-0">
@@ -60,7 +60,7 @@ const bars = Array.from({ length: 40 }, () => barWidths[Math.floor(Math.random()
                 <p class="text-label">
                     Destination
                 </p>
-                <p class="text-xl uppercase tracking-normal leading-tight">
+                <p class="font-bold text-xl uppercase tracking-normal leading-tight">
                     Elian Dmitri's 1st Birthday
                 </p>
             </div>
@@ -95,7 +95,7 @@ const bars = Array.from({ length: 40 }, () => barWidths[Math.floor(Math.random()
                     <img
                         src="assets/images/location.webp"
                         alt="Location"
-                        class="shrink-0 size-23 rounded-lg object-cover -ml-1 mr-4"
+                        class="shrink-0 size-20 sm:size-23 md:size-25 rounded-lg object-cover -ml-1 mr-4"
                     >
                 </div>
             </div>
@@ -152,12 +152,12 @@ const bars = Array.from({ length: 40 }, () => barWidths[Math.floor(Math.random()
 
         <img
             src="assets/icons/display/stamp.svg"
-            class="absolute z-5 top-70 right-15 size-30 opacity-10"
+            class="absolute z-5 top-65 left-35 size-30 opacity-10"
         />
 
         <img
             src="assets/icons/display/map.svg"
-            class="absolute top-45 right-0 size-60 opacity-25"
+            class="absolute top-45 right-3 size-60 opacity-10"
         />
     </div>
 </template>

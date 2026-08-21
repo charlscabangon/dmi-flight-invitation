@@ -28,6 +28,7 @@ const props = withDefaults(
         floatAmplitude?: number;
         floatDuration?: number;
         cloudBaseSize?: string;
+        fixedHeight?: boolean;
         layers?: CloudLayerConfig[];
     }>(),
     {
@@ -38,6 +39,7 @@ const props = withDefaults(
         floatAmplitude: 10,
         floatDuration: 3.2,
         cloudBaseSize: '40vw',
+        fixedHeight: true,
         layers: () => [
             {
                 scale: 1,
@@ -202,7 +204,11 @@ onBeforeUnmount(() => {
 
         <!-- Foreground content -->
         <div
-            class="relative z-10 mx-auto flex min-h-screen w-full max-w-md flex-col justify-center px-6 py-12 sm:max-w-lg"
+            :class="[
+                'relative z-10 flex flex-col justify-center w-full max-w-md sm:max-w-lg',
+                'px-6 py-12 mx-auto',
+                fixedHeight ? 'h-screen' : 'min-h-screen'
+            ]"
         >
             <slot />
         </div>

@@ -31,7 +31,6 @@ defineEmits<{ click: [] }>();
                 v-if="loading"
                 size="size-10"
                 class="text-white shrink-0"
-                label="Loading"
             />
         </span>
     </button>

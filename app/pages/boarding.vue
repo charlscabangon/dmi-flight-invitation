@@ -24,7 +24,10 @@ onMounted(() => {
 </script>
 
 <template>
-    <parallax :plane="false">
+    <parallax
+        :plane="false"
+        :fixed-height="false"
+    >
         <div class="flex flex-col items-center justify-center gap-8 text-center">
             <h1
                 :class="[ 'text-display', visible && 'slide-up-in' ]"
