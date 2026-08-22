@@ -50,7 +50,7 @@ const bars = Array.from({ length: 40 }, () => barWidths[Math.floor(Math.random()
                         Companions
                     </p>
                     <p class="text-desc">
-                        {{ companions.length + 1 }}
+                        {{ companions.length }}
                     </p>
                 </div>
             </div>
