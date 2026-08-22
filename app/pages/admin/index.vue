@@ -11,11 +11,13 @@ definePageMeta({
 const { key } = useBooking();
 const guests = useState<Guest[] | null>(key, () => null);
 
-const totalRsvps = computed(() => guests.value?.length ?? 0);
-
-const totalPassengers = computed(() =>
-    (guests.value ?? []).reduce((sum, guest) => sum + guest.passenger_count, 0),
-);
+const stats = computed(() => [
+    { label: 'Total RSVPs', value: guests.value?.length ?? 0 },
+    {
+        label: 'Total Passengers',
+        value: (guests.value ?? []).reduce((sum, guest) => sum + guest.passenger_count, 0),
+    },
+]);
 
 const formatDate = (iso: string) => {
     return new Date(iso).toLocaleString('en-US', {
@@ -38,28 +40,19 @@ const handleLogout = async () => {
         <h1 class="text-primary-fg">Dmi's Guest List</h1>
 
         <div class="w-full">
-            <div class="w-full flex flex-col gap-5 max-w-4xl mx-auto sm:gap-6">
+            <div class="w-full flex flex-col gap-5 max-w-5xl mx-auto sm:gap-6">
                 <!-- Mini dashboard -->
                 <div class="grid grid-cols-2 gap-3 sm:gap-4">
                     <div
+                        v-for="stat in stats"
+                        :key="stat.label"
                         class="flex flex-col gap-1 rounded-2xl border-2 border-primary bg-primary-bg-muted/40 px-5 py-4"
                     >
                         <p class="text-label">
-                            Total RSVPs
+                            {{ stat.label }}
                         </p>
                         <p class="text-2xl font-semibold">
-                            {{ totalRsvps }}
-                        </p>
-                    </div>
-                    
-                    <div
-                        class="flex flex-col gap-1 rounded-2xl border-2 border-primary bg-primary-bg-muted/40 px-5 py-4"
-                    >
-                        <p class="text-label">
-                            Total Passengers
-                        </p>
-                        <p class="text-2xl font-semibold">
-                            {{ totalPassengers }}
+                            {{ stat.value }}
                         </p>
                     </div>
                 </div>
